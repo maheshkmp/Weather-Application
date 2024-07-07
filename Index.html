@@ -28,13 +28,29 @@
                 <div class="col">
                     <img src="images/wind.png" >
                     <div>
-                        <p class="wind">15km/h</p>
+                        <p class="wind">15 km/h</p>
                         <p>Wind Speed </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+<script>
+    const apiKey = "6e0940d21e2216269c0eedc6dedcd96b";
+    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=bangalore";
+
+    async function checkWeather() {
+        const response = await fetch(apiUrl + `&appid=${apiKey}`);
+        var data = await response.json();
+
+        console.log(data);
+    }
+
+checkWeather();
+</script>    
     
+
+
+
 </body>
 </html>
